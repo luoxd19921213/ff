@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
+	id="WebApp_ID" version="2.5">
+	
+	
+	<!-- 配置spring自己写的servlet 让所有的请求都通过他来中转 -->
+	<servlet>
+		<servlet-name>mvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mvc</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+
+
+	<!-- 这个监听器就会在web上下文初始化的时候，调用webUtil的对应方法，首先获取到param-name对应的param-value ，
+		然后，根据传递进去的ServletContext对象得到web的物理路径:String root = servletContext.getRealPath("/");
+		接着把这个param-value作为key，root作为value放到system中System.setProperty(key, root);
+		然后再web中可以用 System.get.....就可以得到web的跟目录的物理路径了。 
+	-->
+	<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>webAppRootKey</param-value>
+	</context-param>
+	<!-- 方便拿到系统路径的配置 -->
+	<listener>
+		<listener-class> org.springframework.web.util.WebAppRootListener</listener-class>
+	</listener>
+	
+	
+	
+	<!-- 配置编码过滤器 -->
+	<filter>
+		<filter-name>encode</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encode</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- 用于初始化spring容器的Listener -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- 配置读取xml配置文件 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:Annotation.xml</param-value>
+	</context-param>
+</web-app>

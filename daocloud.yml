@@ -1,0 +1,25 @@
+version: "2.0"
+test:
+  image: centos:centos7
+  install:
+  - yum install -y wget git tar
+  - wget -O /tmp/jdk-8u101-linux-x64.tar.gz http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-x64.tar.gz
+	- cd /usr/local && tar xzf /tmp/jdk-8u101-linux-x64.tar.gz
+  - ln -s /usr/local/jdk1.8.0_101 /usr/local/jdk
+  - rm /tmp/jdk-8u101-linux-x64.tar.gz
+  - wget -O /tmp/apache-maven-3.1.1-bin.tar.gz http://ftp.jaist.ac.jp/pub/apache/maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.tar.gz
+  - cd /usr/local && tar xzf /tmp/apache-maven-3.1.1-bin.tar.gz
+  - ln -s /usr/local/apache-maven-3.1.1 /usr/local/maven
+  - rm /tmp/apache-maven-3.1.1-bin.tar.gz
+  before_script:
+  - echo "Setup"
+  script:
+	- cd webapp
+  - /usr/local/maven/bin/mvn install -q -DskipTests=true
+  - /usr/local/maven/bin/mvn test
+
+build:
+  image:
+    dockerfile_path: /Dockerfile
+    build_dir: /
+    cache: true
