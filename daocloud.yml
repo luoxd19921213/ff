@@ -4,10 +4,9 @@ test:
     image: daocloud/ci-java:oraclejdk8
 
     services:
-		    - mysql
+        - mysql
 
     env:
-        - JAVA_HOME=/usr/local/java
 
     install:
         - yum install -y wget git tar
