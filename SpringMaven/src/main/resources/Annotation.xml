@@ -2,18 +2,13 @@
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans" xmlns:ctx="http://www.springframework.org/schema/context" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd ">
 	<ctx:annotation-config /><!-- 打开注解配置 -->
 	<!-- 配置需要扫描的包 -->
-	<ctx:component-scan base-package="com.yvdedu.guan.mapper" />
-	<ctx:component-scan base-package="com.yvdedu.guan.filter" />
-	<ctx:component-scan base-package="com.yvdedu.guan.service" />
-	<ctx:component-scan base-package="com.yvdedu.guan.service.imp" />
-	<ctx:component-scan base-package="com.yvdedu.guan.tool" />
-	
+	<ctx:component-scan base-package="com.yvdedu.guan" />
 
 	<!-- 配置数据库数据圆 -->
 	<bean id="dataSource" class="com.mysql.jdbc.jdbc2.optional.MysqlDataSource">
-		<property name="url" value="jdbc:mysql://localhost/floor?characterEncoding\=utf-8" />
+		<property name="url" value="jdbc:mysql://localhost/test?characterEncoding\=utf-8" />
 		<property name="user" value="root"/>
-		<property name="password" value=""/>
+		<property name="password" value="root"/>
 	</bean>
 	
 	<bean class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -44,7 +39,7 @@
 	<!-- 配置切面编程(主要用来配置事物)   需要配置aop命名空间-->
 	<!-- <aop:aspectj-autoproxy /> 这个是在aop类中来设置切入也就自动扫描需要在aop类中加注解   @Transactional  指定异常回滚@Transactional(rollbackFor={SQLException.class,RuntimeException.class})-->
 	<aop:config>
-		<aop:advisor advice-ref="txAdvice" pointcut="execution(* com.yvdedu.service.*.*(..))"/>
+		<aop:advisor advice-ref="txAdvice" pointcut="execution(* com.yvdedu.guan.service.*.*(..))"/>
 	</aop:config>
 	<!-- 配置具体的事物 -->
 	<tx:advice id="txAdvice">

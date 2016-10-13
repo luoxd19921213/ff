@@ -1,18 +1,27 @@
-import static org.junit.Assert.*;
+
+import java.util.List;
+
+import javax.annotation.Resource;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.yvdedu.guan.entity.Access;
+import com.yvdedu.guan.service.imp.AccessService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:Annotation.xml")
 public class YouTest {
 
-
+	@Resource
+	private AccessService accessService;
+	
 	@Test
-	public void testGetUrl() {
-		System.out.println("我靠这是我的第二个测试  你看得行不一虎骨U币");
+	public void test() {
+		List<Access> mm = accessService.findbyId(1);
+		System.err.println(mm.size());
 	}
+
 }

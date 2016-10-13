@@ -13,6 +13,6 @@ public class MyTest {
 
 	@Test
 	public void testGetUrl() {
-		System.out.println("°¢Ë¹µÙ·Ò½Ó´ıÊÒ");
+		System.out.println("æˆ‘è‰æµ‹è¯•äº†");
 	}
 }

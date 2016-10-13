@@ -21,7 +21,7 @@
 	 
 	<!-- 配置自动生成别名 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/pages/"/>
+		<property name="prefix" value="/WEB-INF/manager/"/>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
 	
