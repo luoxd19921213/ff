@@ -11,7 +11,7 @@ test:
     install:
         - yum install -y wget git tar
         - wget -O /tmp/jdk-8u101-linux-x64.tar.gz http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-x64.tar.gz
-        - cd /usr/local && tar xzf /tmp/jdk-8u101-linux-x64.tar.gz
+        - cd /usr/local && tar xf /tmp/jdk-8u101-linux-x64.tar.gz
         - ln -s /usr/local/jdk1.8.0_101 /usr/local/java
         - rm /tmp/jdk-8u101-linux-x64.tar.gz
         - wget -O /tmp/apache-maven-3.1.1-bin.tar.gz http://ftp.jaist.ac.jp/pub/apache/maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.tar.gz
