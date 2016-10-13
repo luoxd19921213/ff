@@ -3,6 +3,7 @@ image: centos:centos7
 services:
 
 env:
+    - JAVA_HOME=/usr/java/latest/
 
 install:
     - yum install -y wget git tar
