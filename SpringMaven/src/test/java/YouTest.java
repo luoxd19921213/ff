@@ -13,7 +13,6 @@ public class YouTest {
 
 	@Test
 	public void testGetUrl() {
-		int o = 1/0;
 		System.out.println("我靠这是我的第二个测试  你看得行不一虎骨U币");
 	}
 }
