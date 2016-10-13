@@ -20,8 +20,8 @@ public class YouTest {
 	
 	@Test
 	public void test() {
-		List<Access> mm = accessService.findbyId(1);
-		System.err.println(mm.size());
+//		List<Access> mm = accessService.findbyId(1);
+//		System.err.println(mm.size());
 	}
 
 }
