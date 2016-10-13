@@ -14,8 +14,8 @@ test:
   before_script:
   - echo "Setup"
   script:
-	- cd webapp
-  - /usr/local/maven/bin/mvn install
+	- cd SpringMaven
+  - /usr/local/maven/bin/mvn install -q -DskipTests=true
   - /usr/local/maven/bin/mvn test
 
 build:
