@@ -15,7 +15,7 @@ test:
   - echo "Setup"
   script:
 	- cd webapp
-  - /usr/local/maven/bin/mvn install -q -DskipTests=true
+  - /usr/local/maven/bin/mvn install
   - /usr/local/maven/bin/mvn test
 
 build:
