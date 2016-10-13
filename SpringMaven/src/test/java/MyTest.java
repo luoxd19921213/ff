@@ -13,6 +13,6 @@ public class MyTest {
 
 	@Test
 	public void testGetUrl() {
-		System.out.println("我草测试了");
+		System.out.println("啊啊啊啊啊");
 	}
 }
