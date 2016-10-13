@@ -12,7 +12,6 @@ RUN yum -y --noplugins --verbose install nginx git wget tar
 
 # Java installation.
 RUN cd /tmp &&  curl -L 'http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-x64.tar.gz' -H 'Cookie: oraclelicense=accept-securebackup-cookie; gpw_e24=Dockerfile' | tar -xz    
-RUN mkdir /tmp/aa
 RUN mv /tmp/jdk1.8.0_101/ /usr/local/java/
 
 
