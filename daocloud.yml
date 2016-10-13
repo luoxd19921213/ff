@@ -3,7 +3,8 @@ image: centos:centos7
 services:
 
 env:
-    - JAVA_HOME /usr/local/jdk/ 
+    - JAVA_HOME=/usr/local/jdk/ 
+
 
 install:
     - yum install -y wget git tar
@@ -18,6 +19,7 @@ install:
 
 before_script:	
     - echo "Setup"
+
 
 script:
     - cd SpringMaven
