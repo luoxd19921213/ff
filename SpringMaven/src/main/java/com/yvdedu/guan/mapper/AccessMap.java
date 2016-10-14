@@ -7,6 +7,5 @@ import org.apache.ibatis.annotations.Param;
 import com.yvdedu.guan.entity.Access;
 
 public interface AccessMap {
-
 	public String find(@Param("rid") int rid);
 }
