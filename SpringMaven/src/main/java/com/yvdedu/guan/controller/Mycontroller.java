@@ -21,8 +21,8 @@ public class Mycontroller {
 	
 	@RequestMapping("index")
 	public String index(Model model , HttpSession http){
-		List<Access> mm = as.findbyId(1);
-		model.addAttribute("all", mm.get(0).getName());
+		String mm = as.findbyId(1);
+		model.addAttribute("all", mm);
 		return "index";
 		
 	}

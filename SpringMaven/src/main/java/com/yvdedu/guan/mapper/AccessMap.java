@@ -8,5 +8,5 @@ import com.yvdedu.guan.entity.Access;
 
 public interface AccessMap {
 
-	public List<Access> find(@Param("rid") int rid);
+	public String find(@Param("rid") int rid);
 }

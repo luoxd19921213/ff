@@ -6,5 +6,5 @@ import com.yvdedu.guan.entity.Access;
 
 public interface AccessService {
 
-	public List<Access> findbyId(int id);
+	public String findbyId(int id);
 }

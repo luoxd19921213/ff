@@ -16,9 +16,8 @@ public class AccessServiceimp implements AccessService{
 	@Resource
 	private AccessMap accessMap;
 	
-	public List<Access> findbyId(int id) {
+	public String findbyId(int id) {
 		
-		List<Access> mm = accessMap.find(id);
-		return mm;
+		return accessMap.find(id);
 	}
 }
