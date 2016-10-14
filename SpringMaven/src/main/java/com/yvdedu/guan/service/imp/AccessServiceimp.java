@@ -18,6 +18,7 @@ public class AccessServiceimp implements AccessService{
 	
 	public String findbyId(int id) {
 		
-		return accessMap.find(id);
+//		return accessMap.find(id);
+		return "нт╡ш";
 	}
 }
