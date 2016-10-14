@@ -3,7 +3,7 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yvdedu.guan.mapper.AccessMap">
-	<select id="findMenuByRole" resultType="Access">
+	<select id="find" resultType="Access">
 		 select * from test r where r.id=#{rid}
 	</select>
 </mapper>

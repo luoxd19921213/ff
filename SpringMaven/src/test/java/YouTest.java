@@ -9,7 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.yvdedu.guan.entity.Access;
-import com.yvdedu.guan.service.imp.AccessService;
+import com.yvdedu.guan.service.AccessService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:Annotation.xml")

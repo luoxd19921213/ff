@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.yvdedu.guan.entity.Access;
-import com.yvdedu.guan.service.imp.AccessService;
+import com.yvdedu.guan.service.AccessService;
 
 @Controller
 @RequestMapping("manager")
