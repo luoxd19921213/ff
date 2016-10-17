@@ -16,7 +16,8 @@
 		<!-- 配置实体映射  	-->
 		<property name="typeAliasesPackage" value="com.yvdedu.guan.entity" />
 		  <property name="mapperLocations" value="classpath*:com/yvdedu/guan/mapper/*.xml" />
-		<!-- 配置懒加载 -->
+		<!-- 
+		配置懒加载 -->
 		<property name="configurationProperties">
 			<value>
 				lazyLoadingEnabled=true
