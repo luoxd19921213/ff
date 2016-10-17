@@ -15,9 +15,8 @@
 		<property name="dataSource" ref="dataSource" />
 		<!-- 配置实体映射  	-->
 		<property name="typeAliasesPackage" value="com.yvdedu.guan.entity" />
-		  <property name="mapperLocations" value="classpath*:com/yvdedu/guan/mapper/*.xml" />
-		<!-- 
-		配置懒加载 -->
+		<property name="mapperLocations" value="classpath*:com/yvdedu/guan/mapper/*.xml" />
+		<!-- 配置懒加载 -->
 		<property name="configurationProperties">
 			<value>
 				lazyLoadingEnabled=true
@@ -36,6 +35,7 @@
 	<!-- 配置数据库的Mapper -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.yvdedu.guan.mapper" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>  
 	</bean>
 
 	<!-- 配置切面编程(主要用来配置事物)   需要配置aop命名空间-->
