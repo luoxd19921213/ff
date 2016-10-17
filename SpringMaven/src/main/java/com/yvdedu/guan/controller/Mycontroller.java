@@ -26,4 +26,11 @@ public class Mycontroller {
 		return "index";
 		
 	}
+	@RequestMapping("all")
+	public String index1(Model model){
+		List<Access> mm = as.findAll();
+		model.addAttribute("list", mm);
+		return "all";
+		
+	}
 }

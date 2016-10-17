@@ -20,4 +20,8 @@ public class AccessServiceimp implements AccessService{
 		
 		return accessMap.find(id);
 	}
+	
+	public List<Access> findAll(){
+		return accessMap.findAll();
+	}
 }

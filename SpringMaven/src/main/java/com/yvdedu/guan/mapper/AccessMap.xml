@@ -6,4 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="find" resultType="String">
 		 select r.name from test r where r.id=#{rid}
 	</select>
+	<select id="findAll" resultType="Access">
+		 select * from test
+	</select>
 </mapper>
