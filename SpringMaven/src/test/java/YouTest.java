@@ -12,7 +12,7 @@ import com.yvdedu.guan.entity.Access;
 import com.yvdedu.guan.service.AccessService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:Annotation.xml")
+@ContextConfiguration("classpath*:Annotation.xml")
 public class YouTest {
 
 	@Resource
