@@ -50,17 +50,11 @@ ENV CATALINA_HOME /usr/local/tomcat
 ENV MAVEN_HOME /usr/local/maven
 ENV APP_HOME /webapp
 
-# Build the app once, so we can include all the dependencies in the image
 #-Dmaven.test.skip=true，不执行测试用例，也不编译测试用例类
 #-DskipTests，不执行测试用例，但编译测试用例类生成相应的class文件至target/test-classes下
-#rm -rf $CATALINA_HOME/webapps/* && \
-
 RUN cd /webapp && /usr/local/maven/bin/mvn -Dmaven.test.skip=true package && \
     cp target/SpringMaven.war $CATALINA_HOME/webapps/SpringMaven.war
 
-# Set the start script as the default command (this will be overriden if a command is passed to Docker on the commandline).
-# Note that we tail Tomcat's log in order to keep the process running
-# so that Docker will not shutdown the container. This is a bit of a hack.
 CMD /usr/local/start-everything.sh && tail -F /usr/local/tomcat/logs/catalina.out
 
 # Forward HTTP ports
